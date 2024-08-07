@@ -1,20 +1,35 @@
+import random
+import time
 from threading import Thread, Lock, Semaphore
 from queue import Queue
 
 
 BUFFER_SIZE = 10
 buffer = Queue(BUFFER_SIZE)
-mutex = Lock()
-empty = Semaphore(BUFFER_SIZE)
-full = Semaphore(0)
+mutex = Lock()  # sincronizacion del buffer
+empty = Semaphore(BUFFER_SIZE)  # espacios vacios en el buffer
+full = Semaphore(0)     # espacios llenos en el buffer
 
 
 def producer():
-    print("producer")
+    while True:
+        item = random.randint(1, 100)
+        empty.acquire()
+        with mutex:
+            buffer.put(item)
+            print(f"Produciendo: ", item)
+        full.release()
+        time.sleep(random.random())
 
 
 def consumer():
-    print("consumer")
+    while True:
+        full.acquire()
+        with mutex:
+            item = buffer.get()
+            print(f"Consumiendo: ", item)
+        empty.release()
+        time.sleep(random.random())
 
 
 def main():
