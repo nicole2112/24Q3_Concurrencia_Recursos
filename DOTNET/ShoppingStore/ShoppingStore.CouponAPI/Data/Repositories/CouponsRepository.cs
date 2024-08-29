@@ -6,24 +6,46 @@ namespace ShoppingStore.CouponAPI.Data.Repositories
 {
     public class CouponsRepository : IRepository<Coupon>
     {
+        private readonly AppDbContext _db;
+        public CouponsRepository(AppDbContext db)
+        {
+            _db = db;
+        }
+
         public Coupon Add(Coupon entity)
         {
-            throw new NotImplementedException();
+            var entry = _db.Coupons.Add(entity);
+            _db.SaveChanges();
+            return entry.Entity;
+        }
+
+        public Coupon Delete(Coupon entity)
+        {
+            var entry = _db.Coupons.Remove(entity);
+            _db.SaveChanges();
+            return entry.Entity;
         }
 
         public Coupon Get(Expression<Func<Coupon, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return _db.Coupons.FirstOrDefault(predicate);
         }
 
         public Coupon Get(int id)
         {
-            throw new NotImplementedException();
+            return _db.Coupons.FirstOrDefault(c => c.CouponId == id);
         }
 
         public IEnumerable<Coupon> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Coupons;
+        }
+
+        public Coupon Update(Coupon entity)
+        {
+            var entry = _db.Coupons.Update(entity);
+            _db.SaveChanges();
+            return entry.Entity;
         }
     }
 }

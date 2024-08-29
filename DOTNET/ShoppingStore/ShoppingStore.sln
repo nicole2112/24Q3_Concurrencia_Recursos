@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingStore.CouponAPI", "ShoppingStore.CouponAPI\ShoppingStore.CouponAPI.csproj", "{102F2167-8F0E-4320-8336-178EA4F00F53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingStore.CouponAPI", "ShoppingStore.CouponAPI\ShoppingStore.CouponAPI.csproj", "{102F2167-8F0E-4320-8336-178EA4F00F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingStore.ProductAPI", "ShoppingStore.ProductAPI\ShoppingStore.ProductAPI.csproj", "{E7155C15-DA7C-45DD-8FB0-BA75D878B7F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{102F2167-8F0E-4320-8336-178EA4F00F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{102F2167-8F0E-4320-8336-178EA4F00F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{102F2167-8F0E-4320-8336-178EA4F00F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7155C15-DA7C-45DD-8FB0-BA75D878B7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7155C15-DA7C-45DD-8FB0-BA75D878B7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7155C15-DA7C-45DD-8FB0-BA75D878B7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7155C15-DA7C-45DD-8FB0-BA75D878B7F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

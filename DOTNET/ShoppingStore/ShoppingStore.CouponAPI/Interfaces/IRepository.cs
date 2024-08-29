@@ -11,5 +11,9 @@ namespace ShoppingStore.CouponAPI.Interfaces
         T Get(int id);
 
         T Add(T entity);
+
+        T Update(T entity);
+
+        T Delete(T entity);
     }
 }
