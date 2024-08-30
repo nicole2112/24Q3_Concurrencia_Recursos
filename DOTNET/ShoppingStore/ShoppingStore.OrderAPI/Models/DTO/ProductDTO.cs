@@ -1,6 +1,6 @@
-﻿namespace ShoppingStore.ProductAPI.Models
+﻿namespace ShoppingStore.OrderAPI.Models.DTO
 {
-    public class Product
+    public class ProductDTO
     {
         public int ProductId { get; set; }
 
@@ -9,7 +9,5 @@
         public double Price { get; set; }
 
         public string Description { get; set; } = string.Empty;
-
-        public string Category { get; set; } = string.Empty;
     }
 }
