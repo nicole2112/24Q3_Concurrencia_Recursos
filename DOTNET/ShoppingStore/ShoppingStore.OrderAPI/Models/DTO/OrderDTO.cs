@@ -1,18 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ShoppingStore.OrderAPI.Models
+﻿namespace ShoppingStore.OrderAPI.Models.DTO
 {
-    public class Order
+    public class OrderDTO
     {
-        [Key]
         public int OrderId { get; set; }
 
-        [Required]
         public int ProductId { get; set; }
 
         public int? CouponId { get; set; }
 
-        [Required]
         public int Quantity { get; set; }
     }
 }

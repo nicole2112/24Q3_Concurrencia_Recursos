@@ -1,8 +1,8 @@
 ﻿namespace ShoppingStore.OrderAPI.Models.DTO
 {
-    public class ResponseDTO
+    public class ResponseDTO<T> where T : class
     {
-        public object? Result { get; set; }
+        public T? Result { get; set; }
 
         public bool Success { get; set; } = true;
 
