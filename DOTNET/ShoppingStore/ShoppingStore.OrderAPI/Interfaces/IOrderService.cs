@@ -9,6 +9,6 @@ namespace ShoppingStore.OrderAPI.Interfaces
 
         Task<Order> CreateOrderAsync(Order order);
 
-        Task<Order> CancelOrderAsync(int orderId);
+        Order CancelOrder(int orderId);
     }
 }

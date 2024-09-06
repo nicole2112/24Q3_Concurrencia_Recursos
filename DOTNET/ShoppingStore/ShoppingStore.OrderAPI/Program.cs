@@ -4,6 +4,7 @@ using ShoppingStore.OrderAPI.Data;
 using ShoppingStore.OrderAPI.Data.Repositories;
 using ShoppingStore.OrderAPI.Interfaces;
 using ShoppingStore.OrderAPI.Models;
+using ShoppingStore.OrderAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +16,8 @@ builder.Services.AddDbContext<OrderDbContext>(options =>
 });
 
 builder.Services.AddScoped<IRepository<Order>, OrdersRepository>();
-
-
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddHttpClient<OrderService>();
 
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
